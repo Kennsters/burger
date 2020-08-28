@@ -13,7 +13,7 @@ document.getElementById('addBurger').addEventListener('click', event => {
          <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">${document.getElementById('burger').value}</h5>
             <button data-name="${document.getElementById('burger').value}"
-            class="devoure btn btn-success">Devoure</button>
+            class="devour btn btn-success">Devour</button>
          </div>
         `
             document.getElementById('notDevoured').append(burgerElem)
@@ -23,7 +23,7 @@ document.getElementById('addBurger').addEventListener('click', event => {
 })
 
 document.addEventListener('click', event => {
-    if (event.target.classList.contains('devoure')) {
+    if (event.target.classList.contains('devour')) {
         axios.put(`/api/burgers/${event.target.parentNode.parentNode.id}`, {
             devoured: true
         })
